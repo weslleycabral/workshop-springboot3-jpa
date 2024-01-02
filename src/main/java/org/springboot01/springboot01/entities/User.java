@@ -1,5 +1,6 @@
 package org.springboot01.springboot01.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -23,6 +24,7 @@ public class User implements Serializable {
     private String password;
 
     @OneToMany(mappedBy = "client")
+    @JsonIgnore
     private List<Order> order = new ArrayList<>();
 
     public User() {

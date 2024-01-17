@@ -1,5 +1,6 @@
 package org.springboot01.springboot01.services;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springboot01.springboot01.entities.User;
 import org.springboot01.springboot01.repositories.UserRepository;
 import org.springboot01.springboot01.services.exceptions.DatabaseException;
@@ -42,9 +43,13 @@ public class UserService {
     }
 
     public User update (Long id, User user) {
-        User updatedUser = repository.getReferenceById(id);
-        updateData(updatedUser, user);
-        return repository.save(updatedUser);
+        try {
+            User updatedUser = repository.getReferenceById(id);
+            updateData(updatedUser, user);
+            return repository.save(updatedUser);
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException(id);
+        }
     }
 
     private void updateData(User updatedUser, User user) {

@@ -18,7 +18,7 @@ public class UserService {
         return repository.findAll();
     };
 
-    public User  finById(Long id) {
+    public User finById(Long id) {
         Optional<User> obj = repository.findById(id);
         return obj.get();
     }
@@ -29,5 +29,17 @@ public class UserService {
 
     public void delete (Long id) {
         repository.deleteById(id);
+    }
+
+    public User update (Long id, User user) {
+        User updatedUser = repository.getReferenceById(id);
+        updateData(updatedUser, user);
+        return repository.save(updatedUser);
+    }
+
+    private void updateData(User updatedUser, User user) {
+        user.setName(updatedUser.getName());
+        user.setEmail(updatedUser.getEmail());
+        user.setPhone(updatedUser.getPhone());
     }
 }

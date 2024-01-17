@@ -7,7 +7,7 @@ Esse projeto foi desenvolvido durante o curso **Java COMPLETO Programação Orie
 
 [Link do Curso](https://www.udemy.com/course/java-curso-completo/learn/ "Link do curso na Udemy")
 
-Essa aplicação consiste num sistema de emissão de OS(Ordem de Serviço), quando acessamos o endpoint /orders/{id} recebemos todas as informações associadas àquela ordem, como por exemplo: usuário, instante do pedido, status do pagamento, produtos, valores e quaisquer informações consideradas relevantes para o cliente/prestador
+Essa aplicação consiste num sistema de emissão de OS(Ordem de Serviço), quando acessamos o endpoint /orders/{id} recebemos todas as informações associadas àquela ordem, como por exemplo: usuário, instante do pedido, status do pagamento, produtos, valores e quaisquer informações consideradas relevantes para o cliente/prestador.
 
 ## Features
 - Cadastro, atualização e deleção de Usuários/Produtos.
